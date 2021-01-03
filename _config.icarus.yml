@@ -218,9 +218,9 @@ widgets:
         position: left
         type: profile
         # Author name
-        author: test
+        # author: 李四
         # Author title
-        author_title: test test
+        # author_title: test test
         # Author's current location
         # location: Your location
         # URL or path to the avatar image
