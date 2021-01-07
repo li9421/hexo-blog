@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>webpack - 好记性不如烂笔头</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="好记性不如烂笔头"><meta name="msapplication-TileImage" content="https://hexo.io/icon/favicon-160x160.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="好记性不如烂笔头"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="认识webpackwebpack官网 (纯英文的可能看不懂) webpack中文网   什么是webpack 从本质上来讲，webpack是一个现代的JavaScript应用的静态模块打包工具"><meta property="og:type" content="blog"><meta property="og:title" content="webpack"><meta property="og:url" content="https://note.330ml.top/2021/01/07/webpack/"><meta property="og:site_name" content="好记性不如烂笔头"><meta property="og:description" content="认识webpackwebpack官网 (纯英文的可能看不懂) webpack中文网   什么是webpack 从本质上来讲，webpack是一个现代的JavaScript应用的静态模块打包工具"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://note.330ml.top/img/og_image.png"><meta property="article:published_time" content="2021-01-07T23:29:34.000Z"><meta property="article:modified_time" content="2021-01-07T15:59:35.383Z"><meta property="article:tag" content="模块化"><meta property="article:tag" content="webpack"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://note.330ml.top/2021/01/07/webpack/"},"headline":"好记性不如烂笔头","image":["https://note.330ml.top/img/og_image.png"],"datePublished":"2021-01-07T23:29:34.000Z","dateModified":"2021-01-07T15:59:35.383Z","author":{"@type":"Person","name":""},"description":"认识webpackwebpack官网 (纯英文的可能看不懂) webpack中文网   什么是webpack 从本质上来讲，webpack是一个现代的JavaScript应用的静态模块打包工具"}</script><link rel="canonical" href="https://note.330ml.top/2021/01/07/webpack/"><link rel="icon" href="https://hexo.io/icon/favicon-160x160.png"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.3.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="https://hexo.io/icon/favicon-160x160.png" alt="好记性不如烂笔头" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a></div><div class="navbar-end"><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-01-07T23:29:34.000Z" title="2021-01-07T23:29:34.000Z">2021-01-07</time>发表</span><span class="level-item"><time dateTime="2021-01-07T15:59:35.383Z" title="2021-01-07T15:59:35.383Z">2021-01-07</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></span><span class="level-item">26 分钟读完 (大约3934个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">webpack</h1><div class="content"><h2 id="认识webpack"><a href="#认识webpack" class="headerlink" title="认识webpack"></a>认识webpack</h2><p><a target="_blank" rel="noopener" href="https://webpack.js.org/">webpack官网</a> (纯英文的可能看不懂)</p>
+<p><a target="_blank" rel="noopener" href="https://www.webpackjs.com/">webpack中文网</a> </p>
+<ul>
+<li><p>什么是webpack</p>
+<p>从本质上来讲，webpack是一个现代的JavaScript应用的静态<strong>模块打包</strong>工具</p>
+<a id="more"></a>
+</li>
+<li><p>主要两点 </p>
+<ul>
+<li>模块</li>
+<li>打包</li>
+</ul>
+</li>
+</ul>
+<h3 id="前端模块化-："><a href="#前端模块化-：" class="headerlink" title="前端模块化 ："></a>前端模块化 ：</h3><ul>
+<li>前面已经提到过为什么需要模块化</li>
+<li>而且也提到了目前前端模块化的一些方案： AMD 、CMD、CommonJS、ES6 </li>
+<li>在ES6之前，我们要想进行模块化开发，就必须借助于其他的工具，让我们可以进行模块化开发</li>
+<li>并且在通过模块化开发完成项目后还需要处理模块间的各种依赖，并且将其进行整合打包。</li>
+<li>而webpack其中一个核心就是让我们可能进行模块化开发，并且会帮助我们处理模块间的依赖关系。</li>
+<li>而且不仅仅是JavaScript文件，我们的CSS、图片、JSON文件等等在 webpack中都可以被当作模块来使用(在后续我们会看到)。</li>
+<li>这就是webpack中的模块化的概念</li>
+</ul>
+<h3 id="打包"><a href="#打包" class="headerlink" title="打包:"></a>打包:</h3><p>打包如何理解呢？</p>
+<ul>
+<li>理解了webpack可以帮助我们进行模块化，并且处理模块间的各种复杂关系的后，打包的概念就非常好理解了。</li>
+<li>就是将webpack中的各种资源合并成一个或多个包（Bundle）</li>
+<li>并且在打包的过程中，还可以对资源进行处理，比如压缩图片，将scss/less等转成css，将ES6语法转成ES5语法，将typescrip转成JavaScript等等操作</li>
+<li>但是打包的操作似乎grunt/gulp也可以帮助我们完成，它们有什么不同呢</li>
+</ul>
+<h2 id="webpack的安装"><a href="#webpack的安装" class="headerlink" title="webpack的安装"></a>webpack的安装</h2><ul>
+<li>必须先安装Node.JS</li>
+<li>npm 全局安装 webpack</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install webpack@3.6.0 -g ## 这里指定3.6.0版本因为vue cli2依赖该版本</span><br></pre></td></tr></table></figure>
+<ul>
+<li>局部安装webpack <ul>
+<li><code>--save-dev</code> 指开发时依赖，项目打包后不需要继续使用的。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd 对应目录</span><br><span class="line">npm install webpack@3.6.0 --save-dev </span><br></pre></td></tr></table></figure>
+<ul>
+<li>为什么全局安装后还需要局部安装？<ul>
+<li>在终端直接执行webpack命令，使用的全局安装的webpack</li>
+<li>当在package.json中定义了scripts 时，其中包含webpack 命令，那么使用的是局部webpack</li>
+<li>为避免全局与局部配置版本不同等，建议使用当前局部安装webpack打包当前的代码资源</li>
+</ul>
+</li>
+</ul>
+<h2 id="webpack的起步"><a href="#webpack的起步" class="headerlink" title="webpack的起步"></a>webpack的起步</h2><p>准备工作：</p>
+<ul>
+<li>创建如下文件和文件夹</li>
+<li>文件和文件夹解析：<ul>
+<li><code>dist</code> 文件夹： 用于存放打包后的文件</li>
+<li><code>src</code>  文件夹： 用于存放我们写的源文件<ul>
+<li><code>main.js</code> : 项目的入口文件。具体内容查看详情</li>
+</ul>
+</li>
+<li><code>index.html </code>: 浏览器打开展示的首页html</li>
+<li><code>package.json </code>： 通过<code>npm init</code> 生成的，npm包管理的文件</li>
+</ul>
+</li>
+</ul>
+<h3 id="JS文件的打包"><a href="#JS文件的打包" class="headerlink" title="JS文件的打包"></a>JS文件的打包</h3><p>现在的js文件中使用了模块化的方式进行打包，但是不可以直接使用</p>
+<ul>
+<li>因为如果直接在<code>index.html</code>引入这些js文件，浏览器并不能识别其中的模块化代码</li>
+<li>另外，在真实的项目中会有很多这样的js文件，我们一个一个引用非常麻烦，并且后期非常不方便对他们进行管理。</li>
+</ul>
+<p>应该使用 webpack 工具 对多个js文件进行打包</p>
+<ul>
+<li>我们知道，webpack就是一个模块化的打包工具，所以它支持我们代码中写模块化，可以对模块化的代码进行处理。(具体原理看后面)</li>
+<li>另外，如果在处理完所有模块之间的关系后，将多个js文件打包到一个js文件中引入就方便很多了</li>
+</ul>
+<p>webpack 打包指令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webpack src/main.js dist/bundle.js</span><br></pre></td></tr></table></figure>
+<p>打包后会在dist 文件下 生成一个 <code>bundle.js</code>文件</p>
+<ul>
+<li>文件很复杂 基本可以不看</li>
+<li><code>bundle.js</code>文件是webpack 处理了项目直接文件依赖后生成的一个js文件，我们只需要将这个js文件在<code>index.html</code>中引入即可</li>
+</ul>
+<h2 id="webpack的配置"><a href="#webpack的配置" class="headerlink" title="webpack的配置"></a>webpack的配置</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webpack ./src/main.js ./dist/bundle.js</span><br></pre></td></tr></table></figure>
+<h3 id="入口和出口"><a href="#入口和出口" class="headerlink" title="入口和出口"></a>入口和出口</h3><p>我们考虑到：如果每次使用webpack的命令都需要写上入口和出口作为参数，就非常麻烦，有没有一个中方法可以将这个两个函数参数写道配置中，在运行的时候直接读取</p>
+<h4 id="webpack配置方法"><a href="#webpack配置方法" class="headerlink" title="webpack配置方法"></a>webpack配置方法</h4><ul>
+<li>创建一个<code>webpack.json</code>文件</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">const path - requre(&#x27;path&#x27;) // 引入node 默认模块</span><br><span class="line"></span><br><span class="line">moudule.exprots = &#123;</span><br><span class="line">    <span class="comment">// 入口： 可以是字符串/数组/对象，这里文明入口只有一个，所有写一个字符串及可</span></span><br><span class="line">    entry: &#x27;./src/main.js&#x27;,</span><br><span class="line">    <span class="comment">// 出口，通常是一个对象，里面至少包含两个重要属性，path 和 filename</span></span><br><span class="line">    output:&#123;</span><br><span class="line">        path: path.resolve(__dirname,&#x27;dist&#x27;),// 注意 path通常是一个绝对路径</span><br><span class="line">        filename: &#x27;bundle.js&#x27;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="局部安装webpack"><a href="#局部安装webpack" class="headerlink" title="局部安装webpack"></a>局部安装webpack</h3><p>目前，我们使用的webpack是全局的webpack，如果我们想局部打包</p>
+<ul>
+<li>因为一个项目往往依赖特定的webpack版本，全局的版本可能和这个项目的webpack版本不一致，导致打包出现问题</li>
+<li>通常一个项目都有自己局部的webpack。</li>
+</ul>
+<h5 id="第一步，项目中需要安装自己局部的webpack"><a href="#第一步，项目中需要安装自己局部的webpack" class="headerlink" title="第一步，项目中需要安装自己局部的webpack"></a>第一步，项目中需要安装自己局部的webpack</h5><ul>
+<li><p>这里我们让局部安装webpack3.6.0</p>
+</li>
+<li><p>Vue CLi3中已经升级到了webpack4 但是它将配置文件隐藏起来了，所以查起来不是很方便。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install webpack@3.6.0 --save-dev </span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<h4 id="第二步，通过node-modules-bin-webpack启动webpack打包"><a href="#第二步，通过node-modules-bin-webpack启动webpack打包" class="headerlink" title="第二步，通过node_modules/.bin/webpack启动webpack打包"></a>第二步，通过<code>node_modules/.bin/webpack</code>启动webpack打包</h4><h5 id="package-json中定义启动"><a href="#package-json中定义启动" class="headerlink" title="package.json中定义启动"></a><code>package.json</code>中定义启动</h5><p>由于上面启动方式太麻烦，我们可以在<code>package.json</code>的<code>scripts</code>中定义自己的执行脚本</p>
+<p><code>package.json</code>中的<code>scripts</code>脚本在实行时，会按照一定的顺序寻找命令对应的位置</p>
+<ul>
+<li><p> 首先，会先寻找本地的<code>node_modules/.bin</code>路径中对应的命令</p>
+</li>
+<li><p>如果没有找到，会去全局的环境变量中寻找</p>
+</li>
+<li><p>如果执行我们的<code>build</code>指令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<h2 id="loader的使用"><a href="#loader的使用" class="headerlink" title="loader的使用"></a>loader的使用</h2><h3 id="什么是loader"><a href="#什么是loader" class="headerlink" title="什么是loader"></a>什么是loader</h3><p>loader是webpack中一个非常核心的概念</p>
+<p>webpack用来做什么呢？</p>
+<ul>
+<li>在我们之前的实例中，我们主要用webpack 来处理我们写的js代码，并且 webpack 会自动处理js之间相关的依赖。</li>
+<li>但是，在开发中我们不仅仅有基本的js代码处理，我们也需要加载css，图片，也包括一些高级的将ES6转成ES5代码，将Typescript转成JavaScript，将scss、less转成css，将.jsx、.vue文件转成js文件等等。</li>
+<li><strong>但是对于webpack本身来说，对于这些转化是不支持的。</strong></li>
+<li>那怎么办呢? <strong>给webpack拓展对应的<code>loader</code>就可以啦</strong> </li>
+</ul>
+<p>loader使用步骤：</p>
+<ul>
+<li>步骤一： 通过npm 安装需要使用的loader</li>
+<li>步骤二：在<code>webpack.config.json</code>中的modules 关键字下进行配置</li>
+</ul>
+<p>大部分的loader我们都可以在webpack的官网中找到，并且学习对应的用法。</p>
+<h3 id="css文件处理"><a href="#css文件处理" class="headerlink" title="css文件处理"></a>css文件处理</h3><h5 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h5><p>项目开发过程中，我们必然需要添加很多的样式，而样式我们往往写到一个单独的文件中</p>
+<ul>
+<li>在src目录中，创建一个css 文件，其中创建一个<code>normal.css</code>文件</li>
+<li>我们也可以重新组织文件的目录结构，将零散的js文件放在一个js文件夹中。</li>
+</ul>
+<p>在入口文件中引用</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// main.js</span></span><br><span class="line"><span class="built_in">require</span>(<span class="string">&#x27;对应的位置/css/normal.css&#x27;</span>)</span><br><span class="line"><span class="comment">// 然后重新打包</span></span><br></pre></td></tr></table></figure>
+<p><strong>此时就会报错 告诉我们需要有对应的loader</strong></p>
+<h4 id="css-loader"><a href="#css-loader" class="headerlink" title="css-loader"></a>css-loader</h4><p>在webpack官网中， 可以找到关于样式的loader使用方法</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev css-loader ## 安装 css-loader</span><br></pre></td></tr></table></figure>
+<p><code>webpack.config.json</code></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  module: &#123;</span><br><span class="line">      <span class="comment">// 在rules 这个数组里配置 loader </span></span><br><span class="line">    rules: [</span><br><span class="line">      &#123;</span><br><span class="line">        test: /\.css$/,</span><br><span class="line">        use: [ &#x27;style-loader&#x27;, &#x27;css-loader&#x27; ]</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>按照官方配置的<code>webpack.config.json</code>,会发现有一个style-loader。</p>
+<h5 id="style-loader"><a href="#style-loader" class="headerlink" title="style-loader"></a>style-loader</h5><p>除了css-loader 我们还需要一个style-loader</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev style-loader ## 安装 </span><br></pre></td></tr></table></figure>
+<p>配置 <code>webpack.config.json</code></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  module: &#123;</span><br><span class="line">      <span class="comment">// 在rules 这个数组里配置 loader </span></span><br><span class="line">    rules: [</span><br><span class="line">      &#123;</span><br><span class="line">        test: /\.css$/,</span><br><span class="line">        use: [ &#x27;style-loader&#x27;, &#x27;css-loader&#x27; ] // css 和 style的位置固定</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其中 css-loader 是用来解析 css 文件的 style-loader 是用来将样式添加到DOM中的</p>
+<p>但是上面 **style-loader 必须要写在 css-loader前面 **</p>
+<p>是因为webpack 读取使用loader 的过程中，是按照从右往左的顺序读取的。</p>
+<h5 id="less-loader"><a href="#less-loader" class="headerlink" title="less-loader"></a>less-loader</h5><p>其实和上面一个的都是安装 和 配置 </p>
+<ol>
+<li><p>先创建一个less 文件 依然放到 css文件夹</p>
+</li>
+<li><p>继续在官网中找到less-loader的相关使用说明</p>
+</li>
+<li><p>安装 less-loader （注意 还需要安装less 因为webpack需要使用less对less文件进行编译）</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev less-loader less </span><br></pre></td></tr></table></figure></li>
+<li><p>修改对应的配置文件 </p>
+<p>添加一个rules 选项，用于处理 .less 文件</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123; </span><br><span class="line">test: /\.less$/,</span><br><span class="line">use: [&#123;</span><br><span class="line">    loader: &quot;style-loader&quot; // creates style nodes from JS strings</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">    loader: &quot;css-loader&quot; // translates CSS into CommonJS</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">    loader: &quot;less-loader&quot; // compiles Less to CSS</span><br><span class="line">    &#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="图片文件处理"><a href="#图片文件处理" class="headerlink" title="图片文件处理"></a>图片文件处理</h4></li>
+</ol>
+<p>图片资源处理分两种 </p>
+<ul>
+<li>小于 8kb 的分为一类</li>
+<li>大于 8kb 的分为一类</li>
+</ul>
+<p>使用两个loader</p>
+<ul>
+<li><p>url-loader  用于处理 小于8kb的文件</p>
+</li>
+<li><p>file-loader 用于处理 大于8kb的文件</p>
+<p><strong>其中  8kb 的标准可以从配置中修改，但是一般不改</strong></p>
+</li>
+</ul>
+<h5 id="url-loader"><a href="#url-loader" class="headerlink" title="url-loader"></a>url-loader</h5><ul>
+<li><p>安装</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev url--loader</span><br></pre></td></tr></table></figure></li>
+<li><p>配置</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">        test: /\.(png|jpg|gif)$/,</span><br><span class="line">        use: [</span><br><span class="line">          &#123;</span><br><span class="line">            loader: &#x27;url-loader&#x27;,</span><br><span class="line">            options: &#123;</span><br><span class="line">              limit: 8192 // 这里就是 设置 8kb限制的地方</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        ]</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+<p>这也是limit属性的作用，当图片小于8kb时，对图片进行base64编码</p>
+</li>
+</ul>
+<h5 id="大于-8kb-的使用-file-loader"><a href="#大于-8kb-的使用-file-loader" class="headerlink" title="大于 8kb 的使用 file-loader"></a>大于 8kb 的使用 file-loader</h5><ul>
+<li><p>安装</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev file-loader</span><br></pre></td></tr></table></figure></li>
+<li><p>配置</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">        test: /\.(png|jpg|gif)$/,</span><br><span class="line">        use: [</span><br><span class="line">          &#123;</span><br><span class="line">            loader: &#x27;file-loader&#x27;,</span><br><span class="line">            <span class="comment">//</span></span><br><span class="line">            options: &#123;</span><br><span class="line">                limit: 8192,</span><br><span class="line">                name:&#x27;img/[name].[hash:8].[ext]&#x27;</span><br><span class="line">                <span class="comment">//在option中添加的选项设置新生成的图片存放位置和指定文件名</span></span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        ]</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<p>我们发现webpack自动帮我们生成了一个非常的名字</p>
+<ul>
+<li>这一个32位hash值，目的是防止名字重复</li>
+<li>但是真实开发中，我们可以能对打包的图片名字有一定的要求</li>
+<li>比如，将所有的图片放到一个文件夹中，跟上图片原来的名称，同时也要防止重复、</li>
+</ul>
+<p>所以我们可以在options中添加选项：</p>
+<ul>
+<li><code>img</code>：文件要打包到的文件夹</li>
+<li><code>name</code>：获取图片原来的名字，放在该位置</li>
+<li>hash8：为了防止图片名称冲突，依然使用hash，但是我们只保留8位</li>
+<li>ext，使用图片原来的拓展名 </li>
+</ul>
+<p>但是，我们发现图并没有显示出来，这事因为图片使用的路径不正确</p>
+<ul>
+<li><p>默认情况下，webpack会将生成的路径直接返回给使用者</p>
+</li>
+<li><p>但是我们整个程序是打包在dist  文件夹下的，所以这里需要路径下再添加一个dist</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 出口，通常是一个对象，里面至少包含两个重要属性，path 和 filename</span></span><br><span class="line">   output:&#123;</span><br><span class="line">       path: path.resolve(__dirname,<span class="string">&#x27;dist&#x27;</span>),<span class="comment">// 注意 path通常是一个绝对路径</span></span><br><span class="line">       filename: <span class="string">&#x27;bundle.js&#x27;</span>,</span><br><span class="line">       public: <span class="string">&#x27;dist/&#x27;</span></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<h3 id="ES6语法处理"><a href="#ES6语法处理" class="headerlink" title="ES6语法处理"></a>ES6语法处理</h3><p>如果需要将ES6语法 转成ES5  一样需要使用 loader</p>
+<ul>
+<li>安装</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev babel-loader@7 babel-core babel-preset-es2015</span><br></pre></td></tr></table></figure>
+<ul>
+<li>配置</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">   test: <span class="regexp">/\.js$/</span>,</span><br><span class="line">   exclude: <span class="regexp">/(node_modules|bower_components)/</span>,</span><br><span class="line">   use: &#123;</span><br><span class="line">     loader: <span class="string">&#x27;babel-loader&#x27;</span>,</span><br><span class="line">     options: &#123;</span><br><span class="line">       presets: [<span class="string">&#x27;@babel/preset-env&#x27;</span>]</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="webpack中配置Vue"><a href="#webpack中配置Vue" class="headerlink" title="webpack中配置Vue"></a>webpack中配置Vue</h2><h3 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h3><ul>
+<li>npm 安装 </li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install vue --save ## 可以指定版本 不需要加 dev 因为运行时也需要</span><br></pre></td></tr></table></figure>
+<h3 id="2-配置"><a href="#2-配置" class="headerlink" title="2. 配置"></a>2. 配置</h3><p>Vue在开发是发布了两个版本 </p>
+<ol>
+<li>runtime-only -&gt;  代码中不可以有任何template</li>
+<li>runtime-compiler -》 代码中可以有template 因为有compiler 可以用于 编译template</li>
+</ol>
+<p>修改webpack配置 </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">resolve:&#123;</span><br><span class="line">    alias:&#123;</span><br><span class="line">        <span class="string">&#x27;vue$&#x27;</span>:<span class="string">&#x27;vue/dist/vue.esm.js&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<blockquote>
+<p>！ 遇到报错</p>
+<p>vue-loader有很多版本  从14.之后就需要自己配置一个插件 </p>
+<p>可以手动改一下版本 改回到13.0.0以上的版本 用 <code>^13.0.0</code> </p>
+</blockquote>
+<h2 id="plugin的使用"><a href="#plugin的使用" class="headerlink" title="plugin的使用"></a>plugin的使用</h2><p>plugin是什么</p>
+<ul>
+<li>plugin是插件的意思，通常是用于对某个现有的架构进行扩展</li>
+<li>webpack中的插件，就是对webpack现有的功能的各种扩展，比如打包优化，文件压缩等等。</li>
+</ul>
+<p>loader和plugin的区别</p>
+<ul>
+<li>loader主要用于转换某些类型的模块，它本身是一个转换器。</li>
+<li>plugin是插件，它是对webpack本身的扩展，是一个扩展。</li>
+</ul>
+<p>plugin是使用方法： </p>
+<ul>
+<li>步骤一： 通过npm安装需要使用 的plugin(某些webpack以及内置的插件不需要安装)</li>
+<li>步骤二： 在webpack.config.js中的plugins中配置插件</li>
+</ul>
+<h5 id="添加版权的plugin"><a href="#添加版权的plugin" class="headerlink" title="添加版权的plugin"></a>添加版权的plugin</h5><p>用来给打包的文件添加版权声明</p>
+<ul>
+<li>该插件名字叫做 <code>BannerPlugin</code>,属于webpack自带的插件</li>
+</ul>
+<p>在<code>webpakc.config.js</code>文件配置</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> webpack <span class="built_in">require</span>(<span class="string">&#x27;webpack&#x27;</span>)</span><br><span class="line"></span><br><span class="line">moudule.exports = &#123;</span><br><span class="line">    ...</span><br><span class="line">    plugins:[</span><br><span class="line">        <span class="keyword">new</span> webpack.BannerPligin(<span class="string">&#x27;这里写版权信息&#x27;</span>)</span><br><span class="line">        <span class="keyword">new</span> webpack.BannerPligin(<span class="string">&#x27;最终版权归谁所有&#x27;</span>)</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="打包HTML的-plugin"><a href="#打包HTML的-plugin" class="headerlink" title="打包HTML的 plugin"></a>打包HTML的 plugin</h5><p>目前，我们的index.html文件是存放在项目的根目录下的。</p>
+<ul>
+<li>我们知道，在真实发布项目时，发布的是<code>dist</code>文件夹中的内容，但是dist文件夹中如果没有<code>index.js</code>文件，那么打包的js等 文件也就没有意义了</li>
+<li>所以我们需要将 <code>index.html</code>文件打包到 <code>dist</code>文件夹中，这个时候就可以使用 <code>HtmlWebpackPulgin</code>插件</li>
+</ul>
+<p><code>HtmlWebpackPulgin</code>插件可以为我们做这些事情</p>
+<ul>
+<li>自动生成一个<code>index.html</code>文件 <strong>可以指定模板生成</strong></li>
+<li>将打包的js文件，自动通过 <code>script</code>标签插入到body 中</li>
+</ul>
+<p>安装 <code>HtmlWebpackPulgin</code> 插件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install html-webpack-plugin --save-dev </span><br></pre></td></tr></table></figure>
+<p>使用插件，修改<code>webpack.config.js</code> 文件 plugins</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">plugins:&#123;</span><br><span class="line"> 	<span class="keyword">new</span> htmlWebpackPlugin(&#123;</span><br><span class="line">        template: <span class="string">&#x27;index.html&#x27;</span>,</span><br><span class="line">        <span class="comment">// 这里的template 表示要根据什么模板来生成index.html</span></span><br><span class="line">        <span class="comment">// 另外，我们需要删除之前在output中添加的publiuc 属性</span></span><br><span class="line">        <span class="comment">// 否则插入的script标签中的src可能会有问题</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="JS压缩的Plugin"><a href="#JS压缩的Plugin" class="headerlink" title="JS压缩的Plugin"></a>JS压缩的Plugin</h5><p>在项目发布之前，我们必然需要对js等文件进行压缩处理</p>
+<ul>
+<li>这里，我们就对打包文件进行压缩</li>
+<li>我们使用一个第三方插件 <code>uglifyjs-webpack-pubgin</code> ,并且版本号指定 1.1 .1，和CLI2保持一致</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install uglifly-webpack-plugin@1.1.1 --save-dev</span><br></pre></td></tr></table></figure>
+<p>修改<code>webpack.config.js</code> 文件，使用插件：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> webpack = <span class="built_in">require</span>(<span class="string">&#x27;webpack&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> uglifyJsPlugin = <span class="built_in">require</span>(<span class="string">&#x27;uglifyjs-webpack-plugin&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    ...</span><br><span class="line">    plugins:[</span><br><span class="line">        <span class="keyword">new</span> webpack.BannerPlugin = (<span class="string">&#x27;最终版权归AA所有&#x27;</span>)</span><br><span class="line">    	<span class="keyword">new</span> uglifyJSPlugin() </span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+<h2 id="搭建本地服务器"><a href="#搭建本地服务器" class="headerlink" title="搭建本地服务器"></a>搭建本地服务器</h2><p>webpack提供了一个可选的本地开发服务器，这个本地服务器基于node.js，内部使用express框架，可以实现我们让浏览器自动刷新显示我们修改的效果。</p>
+<p>不过它是一个单独的模块，在webpack中使用之前需要安装它</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev webpack-dev-server@2.9.1</span><br></pre></td></tr></table></figure>
+<p><code>devserver</code>也是作为webpack中的一个选项，选项本身可以设置如下属性：</p>
+<ul>
+<li><code>contentBase</code>: 为哪一个文件夹提供本地服务，默认是根文件夹，我们这里要填 <code>&#39;./dist&#39;</code></li>
+<li><code>port</code> : 端口号</li>
+<li><code>inline</code> : 页面实时刷新 (true/flase)</li>
+<li><code>historyApiFallback</code> :  在SPA 页面中 依赖 HTML5 的 history 模式</li>
+</ul>
+<p><code>webpack.config.json</code>配置如下</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">devServer:&#123;</span><br><span class="line">    contenBase: <span class="string">&#x27;./dist&#x27;</span>,</span><br><span class="line">    inline: <span class="literal">true</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们还可以在<code>package.json</code> 配置一个 <code>scripts</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;dev&quot;</span> : <span class="string">&quot;webpack-dev-server --open&quot;</span> <span class="comment">// --open表示直接打开浏览器</span></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="关于抽离配置的补充"><a href="#关于抽离配置的补充" class="headerlink" title="关于抽离配置的补充"></a>关于抽离配置的补充</h2><p>打包设置的抽离 因为开发与运行时配置不同 有的配置开发用 有的配置上线采用 所有需要将其抽离分开</p>
+</div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/%E6%A8%A1%E5%9D%97%E5%8C%96/">模块化</a><a class="link-muted mr-2" rel="tag" href="/tags/webpack/">webpack</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2021/01/07/%E8%AF%A6%E6%83%85%E9%A1%B5%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF/"><span class="level-item"> </span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1 is-sticky"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="http://qm9guu9vd.hn-bkt.clouddn.com/004u7cwqgx07j1tnebt20f0f0100cnlk0k01.mov.00_00_01_20.Still001.jpg" alt=""></figure></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">5</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">1</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">4</p></a></div></div></nav></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/%E5%89%8D%E7%AB%AF/"><span class="level-start"><span class="level-item">前端</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-01-07T23:29:34.000Z">2021-01-07</time></p><p class="title"><a href="/2021/01/07/webpack/">webpack</a></p><p class="categories"><a href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-01-07T15:59:35.383Z">2021-01-07</time></p><p class="title"><a href="/2021/01/07/%E8%AF%A6%E6%83%85%E9%A1%B5%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF/"> </a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-01-03T14:49:19.000Z">2021-01-03</time></p><p class="title"><a href="/2021/01/03/%E5%89%8D%E7%AB%AF%E6%A8%A1%E5%9D%97%E5%8C%96/">前端模块化</a></p><p class="categories"><a href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-01-03T13:12:38.000Z">2021-01-03</time></p><p class="title"><a href="/2021/01/03/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E6%9C%89%E8%BF%99%E4%B8%AA%E7%BD%91%E7%AB%99/">为什么会有这个网站</a></p><p class="categories"><a href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-01-01T22:32:04.000Z">2021-01-01</time></p><p class="title"><a href="/2021/01/01/AJAX/">AJAX</a></p><p class="categories"><a href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2021/01/"><span class="level-start"><span class="level-item">一月 2021</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/AJAX/"><span class="tag">AJAX</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/hexo/"><span class="tag">hexo</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/webpack/"><span class="tag">webpack</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%A8%A1%E5%9D%97%E5%8C%96/"><span class="tag">模块化</span><span class="tag">2</span></a></div></div></div></div></div><div class="column-right-shadow is-hidden-widescreen is-sticky"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#认识webpack"><span class="level-left"><span class="level-item">1</span><span class="level-item">认识webpack</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#前端模块化-："><span class="level-left"><span class="level-item">1.1</span><span class="level-item">前端模块化 ：</span></span></a></li><li><a class="level is-mobile" href="#打包"><span class="level-left"><span class="level-item">1.2</span><span class="level-item">打包:</span></span></a></li></ul></li><li><a class="level is-mobile" href="#webpack的安装"><span class="level-left"><span class="level-item">2</span><span class="level-item">webpack的安装</span></span></a></li><li><a class="level is-mobile" href="#webpack的起步"><span class="level-left"><span class="level-item">3</span><span class="level-item">webpack的起步</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#JS文件的打包"><span class="level-left"><span class="level-item">3.1</span><span class="level-item">JS文件的打包</span></span></a></li></ul></li><li><a class="level is-mobile" href="#webpack的配置"><span class="level-left"><span class="level-item">4</span><span class="level-item">webpack的配置</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#入口和出口"><span class="level-left"><span class="level-item">4.1</span><span class="level-item">入口和出口</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#webpack配置方法"><span class="level-left"><span class="level-item">4.1.1</span><span class="level-item">webpack配置方法</span></span></a></li></ul></li><li><a class="level is-mobile" href="#局部安装webpack"><span class="level-left"><span class="level-item">4.2</span><span class="level-item">局部安装webpack</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#第二步，通过node-modules-bin-webpack启动webpack打包"><span class="level-left"><span class="level-item">4.2.1</span><span class="level-item">第二步，通过node_modules/.bin/webpack启动webpack打包</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="#loader的使用"><span class="level-left"><span class="level-item">5</span><span class="level-item">loader的使用</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#什么是loader"><span class="level-left"><span class="level-item">5.1</span><span class="level-item">什么是loader</span></span></a></li><li><a class="level is-mobile" href="#css文件处理"><span class="level-left"><span class="level-item">5.2</span><span class="level-item">css文件处理</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#css-loader"><span class="level-left"><span class="level-item">5.2.1</span><span class="level-item">css-loader</span></span></a></li><li><a class="level is-mobile" href="#图片文件处理"><span class="level-left"><span class="level-item">5.2.2</span><span class="level-item">图片文件处理</span></span></a></li></ul></li><li><a class="level is-mobile" href="#ES6语法处理"><span class="level-left"><span class="level-item">5.3</span><span class="level-item">ES6语法处理</span></span></a></li></ul></li><li><a class="level is-mobile" href="#webpack中配置Vue"><span class="level-left"><span class="level-item">6</span><span class="level-item">webpack中配置Vue</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#1-安装"><span class="level-left"><span class="level-item">6.1</span><span class="level-item">1. 安装</span></span></a></li><li><a class="level is-mobile" href="#2-配置"><span class="level-left"><span class="level-item">6.2</span><span class="level-item">2. 配置</span></span></a></li></ul></li><li><a class="level is-mobile" href="#plugin的使用"><span class="level-left"><span class="level-item">7</span><span class="level-item">plugin的使用</span></span></a></li><li><a class="level is-mobile" href="#搭建本地服务器"><span class="level-left"><span class="level-item">8</span><span class="level-item">搭建本地服务器</span></span></a></li><li><a class="level is-mobile" href="#关于抽离配置的补充"><span class="level-left"><span class="level-item">9</span><span class="level-item">关于抽离配置的补充</span></span></a></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="https://hexo.io/icon/favicon-160x160.png" alt="好记性不如烂笔头" height="28"></a><p class="is-size-7"><span>&copy; 2021 好记性不如烂笔头</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" async></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
