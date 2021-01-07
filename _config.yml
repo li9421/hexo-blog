@@ -15,11 +15,11 @@ timezone: ''
 ## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
 
 # 网站的网址
-url: https://li9421.github.io/hexo-blog/
+url: https://note.330ml.top/
 # 网址的根路径
 # 如果部署的网址是根路径 则写 
 # 如果部署的网址是子目录，则这里写 /子目录/
-root: /hexo-blog/
+root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
