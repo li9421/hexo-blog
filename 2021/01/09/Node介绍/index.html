@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Node.Js - 好记性不如烂笔头</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="好记性不如烂笔头"><meta name="msapplication-TileImage" content="https://hexo.io/icon/favicon-160x160.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="好记性不如烂笔头"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="Node.js是什么 Node.js是JavsScript 运行时 通俗易懂的讲，Node.js是JavaScript的运行平台 Node.js既不是语言，也不是框架，它是一个平台"><meta property="og:type" content="blog"><meta property="og:title" content="Node.Js"><meta property="og:url" content="https://note.330ml.top/2021/01/09/Node%E4%BB%8B%E7%BB%8D/"><meta property="og:site_name" content="好记性不如烂笔头"><meta property="og:description" content="Node.js是什么 Node.js是JavsScript 运行时 通俗易懂的讲，Node.js是JavaScript的运行平台 Node.js既不是语言，也不是框架，它是一个平台"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://note.330ml.top/img/og_image.png"><meta property="article:published_time" content="2021-01-09T21:22:45.000Z"><meta property="article:modified_time" content="2021-01-09T13:48:34.016Z"><meta property="article:tag" content="Node"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://note.330ml.top/2021/01/09/Node%E4%BB%8B%E7%BB%8D/"},"headline":"好记性不如烂笔头","image":["https://note.330ml.top/img/og_image.png"],"datePublished":"2021-01-09T21:22:45.000Z","dateModified":"2021-01-09T13:48:34.016Z","author":{"@type":"Person","name":""},"description":"Node.js是什么 Node.js是JavsScript 运行时 通俗易懂的讲，Node.js是JavaScript的运行平台 Node.js既不是语言，也不是框架，它是一个平台"}</script><link rel="canonical" href="https://note.330ml.top/2021/01/09/Node%E4%BB%8B%E7%BB%8D/"><link rel="icon" href="https://hexo.io/icon/favicon-160x160.png"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/a11y-dark.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.3.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="https://hexo.io/icon/favicon-160x160.png" alt="好记性不如烂笔头" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a></div><div class="navbar-end"><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-01-09T21:22:45.000Z" title="2021-01-09T21:22:45.000Z">2021-01-09</time>发表</span><span class="level-item"><time dateTime="2021-01-09T13:48:34.016Z" title="2021-01-09T13:48:34.016Z">2021-01-09</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a></span><span class="level-item">33 分钟读完 (大约4876个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">Node.Js</h1><div class="content"><h2 id="Node-js是什么"><a href="#Node-js是什么" class="headerlink" title="Node.js是什么"></a>Node.js是什么</h2><ul>
+<li>Node.js是JavsScript 运行时</li>
+<li>通俗易懂的讲，Node.js是JavaScript的运行平台</li>
+<li>Node.js既不是语言，也不是框架，它是一个平台<a id="more"></a></li>
+<li>浏览器中的Javascript<ul>
+<li>EcmaScript<ul>
+<li>基本语法</li>
+<li>if</li>
+<li>var</li>
+<li>function</li>
+<li>Object</li>
+<li>Array</li>
+</ul>
+</li>
+<li>Bom</li>
+<li>Dom</li>
+</ul>
+</li>
+<li>Node.js中的javaScript<ul>
+<li>没用Bom， Dom</li>
+<li>Ecmascript</li>
+<li>在Node中这个javaSript执行环境为javaScript提供了一些服务器级别的API<ul>
+<li>例如文件的读写<ul>
+<li>网络服务的构建<ul>
+<li>网络通信</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Http服务</li>
+</ul>
+</li>
+<li>构建于Chrome的V8引擎之上<ul>
+<li>代码只是具有特定格式的字符串</li>
+<li>引擎可以认识它，帮你解析和执行</li>
+<li>Googl Chrome的V8引擎是目前公认的解析执行javaScript代码最快的</li>
+<li>Node.js的作者把Google Chrome中V8引擎移植出来，开发了一个独立的javaScript运行时环境</li>
+</ul>
+</li>
+<li>Node.js user an envent-driven,non-blocking I/O mode thatmakes it lightweight and efficent. + envent-driven 事件驱动 + non-block I/O mode 非阻塞I/O模型（异步） + ightweight and efficent. 轻量和高效</li>
+<li>Node.js package ecosystem,npm,is the larget scosystem of open sourcr libraries in the world + npm 是世界上最大的开源生态系统 + 绝大多数的javaScript相关的包都存放在npm上，这样做的目的是为了让开发人员更方便的去下载使用 + npm install jquery</li>
+</ul>
+</li>
+</ul>
+<h2 id="为什么要学习Node-js"><a href="#为什么要学习Node-js" class="headerlink" title="为什么要学习Node.js"></a>为什么要学习Node.js</h2><ul>
+<li>企业需求<ul>
+<li>具有服务端开发经验更佳</li>
+<li>front-end</li>
+<li>back-end</li>
+<li>全栈开发工程师</li>
+<li>基本的网站开发能立 + 服务端 + 前端 + 运维部署</li>
+<li>多人社区</li>
+</ul>
+</li>
+</ul>
+<h2 id="Node能做什么"><a href="#Node能做什么" class="headerlink" title="Node能做什么"></a>Node能做什么</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+ web服务器后台</span><br></pre></td></tr></table></figure>
+<ul>
+<li>命令行工具<ul>
+<li>npm(node)<ul>
+<li>git(c语言)</li>
+<li>hexo (node)</li>
+</ul>
+</li>
+<li>…</li>
+</ul>
+</li>
+<li>对于前端工程师来讲，接触最多的就是它的命令行工具<ul>
+<li>自己写的很少，主要是用别人第三方的</li>
+<li>webpack</li>
+<li>gulp</li>
+<li>npm</li>
+</ul>
+</li>
+</ul>
+<h1 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h1><h2 id="安装Node环境"><a href="#安装Node环境" class="headerlink" title="安装Node环境"></a>安装Node环境</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">+ 查看Node环境的版本号</span><br><span class="line">+ 下载  &lt;https:&#x2F;&#x2F;nodejs.org&#x2F;en&#x2F;&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>安装<ul>
+<li>傻瓜式安装，一路next<ul>
+<li>安装过再次安装会升级</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>确认Node环境是否安装成功<ul>
+<li>查看 node的版本号： <code>node --version</code></li>
+<li>或者 <code>node -v</code></li>
+</ul>
+</li>
+<li>配置环境变量</li>
+</ul>
+<h2 id="解析执行javaScript"><a href="#解析执行javaScript" class="headerlink" title="解析执行javaScript"></a>解析执行javaScript</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 创建编写JavaScript脚本文件</span><br><span class="line">2. 打开终端，定位脚本文件所在目录</span><br><span class="line">3. 输入 &#96;node 文件名&#96; 执行对应的文件</span><br></pre></td></tr></table></figure>
+<p>注意文件名不要用<code>node.js</code> 来命名，也就是说除了<code>node</code>这个名字随便起，最好不要使用中文</p>
+<h2 id="文件的读写"><a href="#文件的读写" class="headerlink" title="文件的读写"></a>文件的读写</h2><p>文件读取：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 浏览器中的Javascript是没用文件操作能力的</span><br><span class="line">&#x2F;&#x2F; 但是Node中的JanaScript具有文件操作能立</span><br><span class="line">&#x2F;&#x2F; fs是file-system的简写，就是文件系统的意思</span><br><span class="line">&#x2F;&#x2F; 在Node中如果想要进行文件的操作就必须要引入fs这个核心模块</span><br><span class="line">&#x2F;&#x2F; 在fs这个核心模块中，就提供了所有文件操作相关的API</span><br><span class="line">&#x2F;&#x2F; 例如 fs.readFile就是用来读取文件的</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 1.使用fs核心模块</span><br><span class="line">var fs &#x3D; require(&#39;fs&#39;);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 2.读取文件</span><br><span class="line">fs.readFile(&#39;.&#x2F;data&#x2F;a.txt&#39;,function(err,data) &#123;</span><br><span class="line">    if(err) &#123;</span><br><span class="line">        console.log(&#39;文件读取失败&#39;)</span><br><span class="line">    &#125;else &#123;</span><br><span class="line">        console.log(data.toString())</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>文件写入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 1.使用fs核心模块</span><br><span class="line">var fs &#x3D; require(&#39;fs&#39;)</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 2.将数据写入文件</span><br><span class="line">fs.writeFile(&#39;.&#x2F;data&#x2F;a.txt&#39;,&#39;我是文件写入的信息内容&#39;,function(err,data) &#123;</span><br><span class="line">    if(err)&#123;</span><br><span class="line">        console.log(&#39;文件写入失败&#39;)</span><br><span class="line">    &#125;else &#123;</span><br><span class="line">        console.log(data.toString())</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="http"><a href="#http" class="headerlink" title="http"></a>http</h2><p>服务器：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 1.加载http核心模块</span><br><span class="line"></span><br><span class="line">var http &#x3D; require(&#39;http&#39;)</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 2.使用 http.createServer()创建一个web服务器</span><br><span class="line">var server &#x3D; http.cerateServer();</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 3. 服务器要做的事儿</span><br><span class="line">&#x2F;*</span><br><span class="line">	提供服务： 对数据服务</span><br><span class="line">	发请求</span><br><span class="line">	接受请求</span><br><span class="line">	处理请求</span><br><span class="line">	反馈(发送响应)</span><br><span class="line">	当客户端请求过来，就会自动触发服务器的request请求事件，然后执行第二个参数：回调处理函数</span><br><span class="line">*&#x2F;</span><br><span class="line">sever.on(&#39;request&#39;,function(req.res) &#123;</span><br><span class="line">    console.log(&#39;收到客户端的请求了&#39;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 4.绑定端口号，启动服务</span><br><span class="line">server.listen(3000,function() &#123;</span><br><span class="line">    console.log(&#39;running....&#39;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h1 id="Node中的模块系统"><a href="#Node中的模块系统" class="headerlink" title="Node中的模块系统"></a>Node中的模块系统</h1><p>使用Node编写应用程序主要就是在使用“</p>
+<ul>
+<li>EcmaScript语言<ul>
+<li>和浏览器一样的，但是在Node中没有Bom，Dom</li>
+</ul>
+</li>
+<li>核心模块<ul>
+<li>文件操作的fs</li>
+<li>http服务操作的http</li>
+<li>url路径操作模块</li>
+<li>path路径操作模块</li>
+<li>os操作系统信息</li>
+</ul>
+</li>
+<li>第三方模块<ul>
+<li>art-template</li>
+<li>必须通过npm下载才可以使用</li>
+</ul>
+</li>
+<li>自己写的模块<ul>
+<li>自己创建的文件</li>
+</ul>
+</li>
+</ul>
+<h2 id="什么是模块化"><a href="#什么是模块化" class="headerlink" title="什么是模块化"></a>什么是模块化</h2><ul>
+<li>文件作用域(模块是独立的，在不同的文件使用必须要重新引用)【在node中没有全局作用域，它是文件模块作用域】</li>
+<li>通信规则<ul>
+<li>加载require</li>
+<li>导出exports (e不发音 读 艾克斯破事 )</li>
+</ul>
+</li>
+</ul>
+<h2 id="commonsJS模块规范"><a href="#commonsJS模块规范" class="headerlink" title="commonsJS模块规范"></a>commonsJS模块规范</h2><p>在Node中Javascript还有一个重要的概念，模块系统</p>
+<ul>
+<li><p>模块作用域</p>
+</li>
+<li><p>使用require方法来加载模块</p>
+</li>
+<li><p>使用exports接口对象来导出模块中的成员</p>
+<h3 id="加载-require"><a href="#加载-require" class="headerlink" title="加载 require"></a>加载 require</h3><p>语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var 自定义变量名 &#x3D; require(&#39;模块&#39;)</span><br></pre></td></tr></table></figure>
+<p>作用:</p>
+<ul>
+<li>执行被加载模块的代码</li>
+<li>得到被加载模块中的 <code>exports</code>导出接口对象</li>
+</ul>
+<h3 id="导出exports"><a href="#导出exports" class="headerlink" title="导出exports"></a>导出<code>exports</code></h3><ul>
+<li><p>Node中是模块作用域，默认文件中所有的成员只在当前模块有效</p>
+</li>
+<li><p>对于希望可以被其他模块访问的成员，我们需要把这些想要公开的成员都挂载到 <code>exports</code>对象中就可以了</p>
+<p>导出多个成员（必须在对象中）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">exports.a &#x3D; 123;</span><br><span class="line">exports.b &#x3D; function() &#123;</span><br><span class="line">    console.log(&#39;bbb&#39;)</span><br><span class="line">&#125;;</span><br><span class="line">exports.c &#x3D; &#123;</span><br><span class="line">    foo: &quot;bar&quot;</span><br><span class="line">&#125;;</span><br><span class="line">exports.d &#x3D; &#39;hello&#39;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">导出单个成员（拿到的就是函数，字符串）：</span><br><span class="line"></span><br><span class="line"> &#96;&#96;&#96;javascript</span><br><span class="line"> module.exports &#x3D; &#39;hello&#39;</span><br></pre></td></tr></table></figure>
+<p>以下情况会覆盖：</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = <span class="string">&#x27;hello&#x27;</span>;</span><br><span class="line"><span class="comment">// 后者会覆盖前者</span></span><br><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x,y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x+y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>也可以通过以下方法来导出多个成员</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    foo = <span class="string">&#x27;hello&#x27;</span>,</span><br><span class="line">    add:<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> x+y;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 模块原理</span><br><span class="line"></span><br><span class="line">exports 和 module.exports 的一个引用：</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>console.log(exports === module.exports);// true</p>
+</li>
+</ul>
+<p>exports.foo = ‘bar’;</p>
+<p>// 等价于<br>module.exports.foo = ‘bar’<br>当给expots重新赋值后，exports！=module.exports.<br>最终return的是module.exports,无论exports中的成员是什么都没有用<br>真正去使用的时候：<br>    导出单个成员： exports.xxx = xxx;<br>    导出多个成员： module.exports 或者 module.exports = {};</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 总结</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>// 引用服务<br>var http = require(‘http’);<br>var fs = require(‘fs’);<br>// 引用模板<br>var template = require(‘art-template’);<br>// 创建服务<br>var server = http.createServer();<br>// 公共路径<br>var wwwDir = ‘D:/app/www’;<br>server.on(‘request’,function(req,res) {<br>    var url = req.url;<br>    // 读取文件<br>    fs.readFile(‘./template-apche.html’,function(err,data) {<br>        if(err) {<br>            return res.end(‘404 NoT Found’)<br>        }<br>        fs.readdir(wwwDir,function(err,files) {<br>            if (err) {<br>                return res.end(‘Can not find www Dir’)<br>            }<br>            // 使用模板引擎解析替换data中的模板字符串<br>            // 去xmpTempletelist.html中编写模板语法<br>            var htmlStr = template.render(data.toString(),{<br>                title: ‘D:/app/www/ 的索引’,<br>                files: files</p>
+<pre><code>    &#125;);
+        // 发送相应数据
+        res.end(htmlStr)
+&#125;</code></pre>
+<p>});<br>server.listen(3000,function() {<br>    console.log(‘running’….)<br>})<br>1.jQuery中的each 和 原生JavaScript方法forEach的区别：<br>    提供源头：<br>        原生js是es5提供的（不兼容IE8），<br>        jqurey的each是jQuery第三方库提供的（如果要使用需要用2以下的版本也就是1.版本），它的each方法主要用来遍历jQuery对象（伪数组），同时也可以做低版本forEach的替代品，jQuery的实例对象不可以用forEach方法，如果想要使用必须转为数组([].slice.call(Jquery实例对象)) 才能使用<br>2. 模块中导出多个成员和导出单个成员<br>3.301和302的区别：<br>    301 永久重定向，浏览器会记住(只要不清缓存，下次就直接重定向，不问了)<br>    302 临时重定向 (下次还会再问)<br>4.exports和module.exports的区别：<br>    每个模块中都有一个module对象<br>    module对象中有一个exports对象<br>    我们可以把需要导出的对象都挂载到<br>    module.exports接口对象<br>    也就是<code>module.exports.xxx = xxx</code>的方师傅<br>    但是每次写太多了就很麻烦，所有 Node 为了简化代码，就在每个模块中都提供了一个成员叫<code>exports</code><br>    <code>exports === module.exports</code>结果为 true，所以完全可以<code>exports.xxx = xxx</code><br>    当一个模块需要导出单个成员的时候必须使用<code>module.exports = xxx</code>的方式， =使用<code>exports = xxx</code>不管用，因为每个模块最后return 的是module.exports,而exports只是module.exports的一个引用，所以<code>exports</code>即使重新赋值，也不会影响<code>module.exports</code>。<br>    有一种赋值方式比较特殊：<code>exports = module.exports</code>这个用来重新建立引用关系。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"># require 的加载规则</span><br><span class="line"></span><br><span class="line">- 核心模块</span><br><span class="line">  - 模块名</span><br><span class="line">- 第三方模块</span><br><span class="line">  - 模块名</span><br><span class="line">- 用户自己写的</span><br><span class="line">  - 路径</span><br><span class="line"></span><br><span class="line">## require的加载规则：</span><br><span class="line"></span><br><span class="line">- 优先从缓存加载</span><br><span class="line"></span><br><span class="line">- 判断模块标识符</span><br><span class="line"></span><br><span class="line">  - 核心模块</span><br><span class="line"></span><br><span class="line">  - 自己写的模块（路径形式的模块）</span><br><span class="line"></span><br><span class="line">  - 第三方模块（node-modules）</span><br><span class="line"></span><br><span class="line">    - 第三方模块的标识就是第三方模块的名称（不可能有第三方模块的核心模块的名字一致）</span><br><span class="line"></span><br><span class="line">    - npm</span><br><span class="line"></span><br><span class="line">      - 开发人员可以把写好的框架库发布到npm上</span><br><span class="line">      - 使用者通过npm命令来下载</span><br><span class="line"></span><br><span class="line">    - 使用方式：</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code>  var 名称 = require(&#39;npm install 【下载包】的包名&#39;)
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- node_modules&#x2F;express&#x2F;package.json main</span><br><span class="line">- 如果package.json或者main不成立，则查找被选择项： index.js</span><br><span class="line">- 如果以上条件都不满足，则继续进入上一级目录中的 node_modules 按照上面的规则依次查找，直到当前文件所属磁盘根目录都找不到最后报错</span><br><span class="line"></span><br></pre></td></tr></table></figure></code></pre>
+<p>// 如果非路径形式的标识<br>// 路径形式的标识：<br>    // ./ 当前目录 不可省略<br>    // ../ 上一级目录 不可省略<br>    // /xxx 也就是 D：/xxx 也叫磁盘根目录<br>    // 带有绝对路径几乎不用 （D:/a/foo.js）<br>// 首位表示的是当前文件模块所属磁盘根目录<br>// requir(‘./a’);</p>
+<p>// 核心模块<br>// 核心模块本质也是文件，核心模块文件已经被编译到了二进制文件中了，我们只需要按照名字来加载就可以了<br>require(‘fs’);</p>
+<p>// 第三方模块<br>// 凡是第三方模块都必须通过npm下载(npm i node_modules),使用的时候就可以通过require(‘包名’)来加载使用<br>// 第三方包的名字不可能和核心模块的名字是一样的<br>// 既不是核心模块，也不是路径形式的模块<br>//      先找到当前文件所属目录的node_modules<br>//        然后找node——modules/art-template目录<br>//         mode_modules/art-template/package.json<br>//         node_modules/art-template/package.json中的main属性<br>//        main属性记录了art-template的入口模块<br>//        然后就使用加载这个第三方包<br>//        实际最终加载的还是文件</p>
+<p>//         如果package.json不存在或者main 指定的入口模块不存在<br>//         则node会自动找该目录下的index.js<br>//        也就是说index.js 是一个备选项，如果main没有指定，就加载index.js<br>//<br>//         如果条件都不满足则会进入上一级目录进行查找<br>// 注意： 一个项目只有一个node_modules,放在项目根目录中，子目录可以直接调用根目录的文件<br>var template = require(‘art-temolate’)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 模块标识符中的&#x2F;和文件操作路径中的&#x2F;</span><br><span class="line"></span><br><span class="line">文件操作路径：</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>// 咱们所使用的所有文件操作的APi都是异步的<br>// 就像AJAX请求一样<br>// 读取文件<br>// 文件操作中 ./相当于当前模块所处的磁盘根目录<br>// ./index.txt      相对于当前目录<br>// /index.txt          相对于当前目录<br>// /index.txt        绝对路径，当前文件模块所处根目录<br>// d:/express/index.js   绝对路径<br>fs.readFile(‘./index.txt’,function(err,data) {<br>    if(err){<br>        return consloe.log(‘读取失败’)<br>    }<br>    console。log(data.toString());<br>})</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">模块操作路径</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>// 在模块加载中，相对路径中的./不能省略<br>// 这里省略了，也是磁盘根目录<br>require(‘./index’)(‘hello’)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"># npm</span><br><span class="line"></span><br><span class="line">- node package manage(node包管理器)</span><br><span class="line">- 通过npm命令安装jQuery包（npm install --save jquery),在安装时加上 --save 会主动生成说明文件信息（将安装文件的信息添加到package.json里面 npm 5.版本后可以省略 --save 不管加不加都会自动保存）</span><br><span class="line"></span><br><span class="line">### npm 网线</span><br><span class="line"></span><br><span class="line">&gt; [npmjs.com](http:&#x2F;&#x2F;npmjs.com&#x2F;) 网站 是用来搜索npm包的</span><br><span class="line"></span><br><span class="line">### npm命令行工具</span><br><span class="line"></span><br><span class="line">npm是一个命令行工具，只要安装了node就可以安装npm</span><br><span class="line"></span><br><span class="line">npm 也有版本概念，可以通过 &#96;npm --version&#96;来查看npm的版本</span><br><span class="line"></span><br><span class="line">升级npm（自己升级自己）：</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>npm install –global npm</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 常用命令</span><br><span class="line"></span><br><span class="line">- npm init(生成package.json说明书文件）</span><br><span class="line">  - npm init -y(可以跳过向导，快速生成)</span><br><span class="line">- npm install</span><br><span class="line">  - 一次性把dependencies 选项中的依赖项全部下载</span><br><span class="line">  - 简写 （npm i）</span><br><span class="line">- npm install 包名</span><br><span class="line">  - 只下载</span><br><span class="line">  - 简写 （npm i 包名）</span><br><span class="line">- npm install --save</span><br><span class="line">  - 下载并保存依赖项 （package,json文件中的dependencies）</span><br><span class="line">  - 简写 （npm i 包名）</span><br><span class="line">- npm uninstall 包名</span><br><span class="line">  - 只删除，如果有依赖项会保存</span><br><span class="line">  - 简写 （npm un 包名）</span><br><span class="line">- npm help</span><br><span class="line">  - 查看使用帮助</span><br><span class="line">- npm 命令 -- help</span><br><span class="line">  - 查看具体命令的使用帮助 （npm uninstall--help）</span><br><span class="line"></span><br><span class="line">### 解决npm被墙问题</span><br><span class="line"></span><br><span class="line">npm存储包文件的服务器在国外，有时候会被墙，速度很慢，所以需要解决这个问题。</span><br><span class="line"></span><br><span class="line">&gt; https:&#x2F;&#x2F;developer.aliyun.com&#x2F;mirror&#x2F;NPM?from&#x3D;tnpm 淘宝开发团队把npm 在国内做了一个镜像 (也就是一个备份)。</span><br><span class="line"></span><br><span class="line">安装淘宝的cnpm</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>npm install -g cnpm – registry=<a target="_blank" rel="noopener" href="https://registry.npm.taobao.org/">https://registry.npm.taobao.org</a><br>#在任意目录执行都可以</p>
+<h1 id="–global表示安装到全局，而非当前目录"><a href="#–global表示安装到全局，而非当前目录" class="headerlink" title="–global表示安装到全局，而非当前目录"></a>–global表示安装到全局，而非当前目录</h1><h1 id="–global不可以省略，否则不管用"><a href="#–global不可以省略，否则不管用" class="headerlink" title="–global不可以省略，否则不管用"></a>–global不可以省略，否则不管用</h1><p>npm install –global cnpm</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">安装包的时候把以前的&#96;npm&#96;替换成&#96;cnpm&#96;。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="走国外的npm-服务器下载jQuery包，速度比较慢"><a href="#走国外的npm-服务器下载jQuery包，速度比较慢" class="headerlink" title="走国外的npm 服务器下载jQuery包，速度比较慢"></a>走国外的npm 服务器下载jQuery包，速度比较慢</h1><p>npm install jQuery；</p>
+<h1 id="使用cnpm-就会通过淘宝的服务器来下载jQuery"><a href="#使用cnpm-就会通过淘宝的服务器来下载jQuery" class="headerlink" title="使用cnpm 就会通过淘宝的服务器来下载jQuery"></a>使用cnpm 就会通过淘宝的服务器来下载jQuery</h1><p>cnpm install jQuery</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">如果不想安装 cnpm 又想使用淘宝的服务器来下载：</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>npm install jquery –registry=<a target="_blank" rel="noopener" href="https://npm.taobao.org/">https://npm.taobao.org</a>;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">但是每次手动加参数就很麻烦（主要记不住），所以我们可以把这个选项加入到配置文件中：</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>npm config set registry <a target="_blank" rel="noopener" href="https://npm.taobao.org/">https://npm.taobao.org</a>;</p>
+<h1 id="查看npm配置信息"><a href="#查看npm配置信息" class="headerlink" title="查看npm配置信息"></a>查看npm配置信息</h1><p>npm config list;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">只要经过上面的配置命令，则以后所有的&#96;npn install&#96;都会通过淘宝的服务器来下载</span><br><span class="line"></span><br><span class="line"># package.json</span><br><span class="line"></span><br><span class="line">每个项目都要有一个&#96;package.json&#96;文件（包描述文件，就像产品是说明书一样）</span><br><span class="line"></span><br><span class="line">这个文件可以通过 &#96;npm init&#96;自动初始化出来</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>PS D:\code\node&gt; npm init<br>This utility will walk you through creating a package.json file.<br>It only covers the most common items, and tries to guess sensible defaults.</p>
+<p>See <code>npm help init</code> for definitive documentation on these fields<br>and exactly what they do.</p>
+<p>Use <code>npm install &lt;pkg&gt;</code> afterwards to install a package and<br>save it as a dependency in the package.json file.</p>
+<p>Press ^C at any time to quit.<br>package name: (node)<br>version: (1.0.0)<br>description: 这是一个测试项目<br>entry point: (index.js)<br>test command:<br>git repository:<br>keywords:<br>author:<br>license: (ISC)<br>About to write to D:\code\node\package.json:</p>
+<p>{<br>  “name”: “node”,<br>  “version”: “1.0.0”,<br>  “description”: “这是一个测试项目”,<br>  “main”: “index.js”,<br>  “scripts”: {<br>    “test”: “echo &quot;Error: no test specified&quot; &amp;&amp; exit 1”<br>  },<br>  “author”: “”,<br>  “license”: “ISC”<br>}</p>
+<p>Is this OK? (yes) yes</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">对于目前来讲，最有用的是&#96;dependencies&#96;选项，可以用来帮助我们保存第三方包的依赖信息。</span><br><span class="line"></span><br><span class="line">如果&#96;node_modules&#96;删除了也不用但是，只需要在控制面板中&#96;npm install&#96;就会自动把&#96;package.json&#96;中的&#96;dependencies&#96;中所有的依赖项全部下载下来。</span><br><span class="line"></span><br><span class="line">- 建议每个项目的根目录下都有一个&#96;package.json&#96;文件</span><br><span class="line">- 建议执行&#96;npm install 包名&#96;的时候都加上&#96;--save&#96;选项，目的是用来保存依赖信息</span><br><span class="line"></span><br><span class="line">## package.json和package-lock.json</span><br><span class="line"></span><br><span class="line">npm 5 以前是不会有&#96;package-lock,json&#96;这个文件</span><br><span class="line"></span><br><span class="line">npm 5 以后才加入这个文件</span><br><span class="line"></span><br><span class="line">当你安装包的时候，npm都会生成或者更新&#96;package-lock.json&#96;这个文件</span><br><span class="line"></span><br><span class="line">- npm5以后的版本都不要加 &#96;--save&#96;参数，它会自动保存依赖信息</span><br><span class="line"></span><br><span class="line">- 当你安装包的时候，自动创建或者更新&#96;package.json&#96;文件</span><br><span class="line"></span><br><span class="line">- &#96;&#96;&#96;</span><br><span class="line">  package-lock.json</span><br></pre></td></tr></table></figure>
+<p>  这个文件会包含</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node_modules</span><br></pre></td></tr></table></figure>
+<p>  中所有包的信息（版本，下载地址。。。）</p>
+<ul>
+<li><p>这样的话重新<code>npm install</code>的时候速度就可以提升</p>
+</li>
+<li><p>从文件来看，有一个</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lock</span><br></pre></td></tr></table></figure>
+<p>称之为锁</p>
+<ul>
+<li>这个<code>lock</code>是用来锁版本的</li>
+<li>如果项目依赖了<code>1.1.1</code>版本</li>
+<li>如果你重新install 其实会下载 最新版本，而不是<code>1.1.1</code></li>
+<li><code>package-lock.json</code>的另一个作用就是用来锁定版本号，防止自动升级</li>
+</ul>
+</li>
+</ul>
+<h2 id="path路径操作模块"><a href="#path路径操作模块" class="headerlink" title="path路径操作模块"></a>path路径操作模块</h2><blockquote>
+<p>参考文档：<a target="_blank" rel="noopener" href="https://nodejs.org/docs/latest-v13.x/api/path.html">https://nodejs.org/docs/latest-v13.x/api/path.html</a></p>
+</blockquote>
+<ul>
+<li>path.basename: 获取路径的文件名，默认包含拓展名</li>
+<li>path.dirname: 获取路径中的目录部分</li>
+<li>path:extname: 获取一个路径中的拓展名部分</li>
+<li>patn.parse: 把路径转为对象<ul>
+<li>root:根路径</li>
+<li>dir：目录</li>
+<li>base： 包含拓展名的文件名</li>
+<li>name： 不包含后缀名的文件名</li>
+</ul>
+</li>
+<li>path.join: 拼接路径</li>
+<li>path.isAbsolute: 判断一个路径是否为绝对路径（图片丢失）</li>
+</ul>
+<h1 id="Node中的其他成员-dirname-filename"><a href="#Node中的其他成员-dirname-filename" class="headerlink" title="Node中的其他成员(dirname,filename)"></a>Node中的其他成员(dirname,filename)</h1><p>在每个模块中，除了<code>require</code>,<code>exports</code>等模块相关的API之外，还有两个特殊的成员：</p>
+<ul>
+<li><code>__dirname</code>,是一个成员可以用来<strong>动态</strong>获取当前文件模块所属目录的绝对路径</li>
+<li><code>__filename</code>,可以用来<strong>动态</strong>获取当前文件的绝对路径(包含文件名)</li>
+<li><code>__dirname和__filename</code>是不受node命令所属路径影响的 [图片丢失]</li>
+</ul>
+<p>在文件操作中，使用相对路径是不可靠的，因为node中文件操作的路径被设计为相对于执行node 命令所处的路径</p>
+<p>所以为了解决这个问题，只需要把相对路径改为绝对路径(绝对路径不受任何影响)就可以了</p>
+<p>就可以使用<code>__dirname 或者__filename</code>来帮助我们解决这个问题</p>
+<p>在路径拼接的过程中，为了避免手动拼接带来的一些低级错 推荐使用 path.join()`来辅助拼接</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var fs &#x3D; require(&#39;fs&#39;);</span><br><span class="line">var path &#x3D;require(&#39;path&#39;);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;  console.log(__dirname + &#39;a.txt&#39;);</span><br><span class="line">&#x2F;&#x2F; path.join方法会将文件操作中的相对路径都统一的转为动态的绝对路径</span><br><span class="line">fs.readFile(path.join(__dirname + &#39;&#x2F;a.txt&#39;),&#39;utf-8&#39;,function(err,data) &#123;</span><br><span class="line">    if (err)&#123;</span><br><span class="line">        throw err</span><br><span class="line">    &#125;</span><br><span class="line">    console.log(data);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>补充： 模块中的路径标识和这里的路径没有关系，不受影响(就是相对于文件模块)</p>
+</blockquote>
+<blockquote>
+<h4 id="注意："><a href="#注意：" class="headerlink" title="注意："></a><strong>注意：</strong></h4><p><strong>模块中的路径标识和文件操作中的相对路径标识不一致</strong></p>
+<p><strong>模块中的路径标识就是相对于当前文件模块，补受node命令所处路劲影响</strong></p>
+</blockquote>
+<h1 id="修改完代码自动重启"><a href="#修改完代码自动重启" class="headerlink" title="修改完代码自动重启"></a>修改完代码自动重启</h1><p>我们在这里可以使用一个第三方命令行工具：</p>
+<p><code>nodemon</code>来帮助我们解决频繁修改代码重启服务器的问题。</p>
+<p><code>nodemon</code>是一个基于Node.js开发的第三方命令行工具，我们使用的时候需要独立安装；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 在任意目录执行该命令都可以</span><br><span class="line"># 也就是说，所有需要 --global 安装的包都可以在任意目录执行</span><br><span class="line">npm install ---global nodemon</span><br><span class="line">npm install -g nodemon</span><br><span class="line"></span><br><span class="line"># 如果安装不成功的话 ，可以使用cnpm 安装</span><br><span class="line">cnpm install -g nodemon</span><br></pre></td></tr></table></figure>
+<p>安装完毕之后使用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">node app.js</span><br><span class="line"></span><br><span class="line"># 使用nodemon</span><br><span class="line">nodemon app.js</span><br></pre></td></tr></table></figure>
+<p>只要是通过<code>nodemon</code>启动服务，则他会监视你的文件变化，当文件发生变化的时候，会自动帮你重启服务器。</p>
+</div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/Node/">Node</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2021/01/07/webpack/"><span class="level-item">webpack</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1 is-sticky"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="http://qm9guu9vd.hn-bkt.clouddn.com/004u7cwqgx07j1tnebt20f0f0100cnlk0k01.mov.00_00_01_20.Still001.jpg" alt=""></figure></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">5</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">2</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">5</p></a></div></div></nav></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/%E5%89%8D%E7%AB%AF/"><span class="level-start"><span class="level-item">前端</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%90%8E%E7%AB%AF/"><span class="level-start"><span class="level-item">后端</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-01-09T21:22:45.000Z">2021-01-09</time></p><p class="title"><a href="/2021/01/09/Node%E4%BB%8B%E7%BB%8D/">Node.Js</a></p><p class="categories"><a href="/categories/%E5%90%8E%E7%AB%AF/">后端</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-01-07T23:29:34.000Z">2021-01-07</time></p><p class="title"><a href="/2021/01/07/webpack/">webpack</a></p><p class="categories"><a href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-01-03T14:49:19.000Z">2021-01-03</time></p><p class="title"><a href="/2021/01/03/%E5%89%8D%E7%AB%AF%E6%A8%A1%E5%9D%97%E5%8C%96/">前端模块化</a></p><p class="categories"><a href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-01-03T13:12:38.000Z">2021-01-03</time></p><p class="title"><a href="/2021/01/03/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E6%9C%89%E8%BF%99%E4%B8%AA%E7%BD%91%E7%AB%99/">为什么会有这个网站</a></p><p class="categories"><a href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-01-01T22:32:04.000Z">2021-01-01</time></p><p class="title"><a href="/2021/01/01/AJAX/">AJAX</a></p><p class="categories"><a href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2021/01/"><span class="level-start"><span class="level-item">一月 2021</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/AJAX/"><span class="tag">AJAX</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Node/"><span class="tag">Node</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/hexo/"><span class="tag">hexo</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/webpack/"><span class="tag">webpack</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%A8%A1%E5%9D%97%E5%8C%96/"><span class="tag">模块化</span><span class="tag">2</span></a></div></div></div></div></div><div class="column-right-shadow is-hidden-widescreen is-sticky"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><ul class="menu-list"><li><a class="level is-mobile" href="#Node-js是什么"><span class="level-left"><span class="level-item">1.1</span><span class="level-item">Node.js是什么</span></span></a></li><li><a class="level is-mobile" href="#为什么要学习Node-js"><span class="level-left"><span class="level-item">1.2</span><span class="level-item">为什么要学习Node.js</span></span></a></li><li><a class="level is-mobile" href="#Node能做什么"><span class="level-left"><span class="level-item">1.3</span><span class="level-item">Node能做什么</span></span></a></li></ul><li><a class="level is-mobile" href="#起步"><span class="level-left"><span class="level-item">2</span><span class="level-item">起步</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#安装Node环境"><span class="level-left"><span class="level-item">2.1</span><span class="level-item">安装Node环境</span></span></a></li><li><a class="level is-mobile" href="#解析执行javaScript"><span class="level-left"><span class="level-item">2.2</span><span class="level-item">解析执行javaScript</span></span></a></li><li><a class="level is-mobile" href="#文件的读写"><span class="level-left"><span class="level-item">2.3</span><span class="level-item">文件的读写</span></span></a></li><li><a class="level is-mobile" href="#http"><span class="level-left"><span class="level-item">2.4</span><span class="level-item">http</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Node中的模块系统"><span class="level-left"><span class="level-item">3</span><span class="level-item">Node中的模块系统</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#什么是模块化"><span class="level-left"><span class="level-item">3.1</span><span class="level-item">什么是模块化</span></span></a></li><li><a class="level is-mobile" href="#commonsJS模块规范"><span class="level-left"><span class="level-item">3.2</span><span class="level-item">commonsJS模块规范</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#加载-require"><span class="level-left"><span class="level-item">3.2.1</span><span class="level-item">加载 require</span></span></a></li><li><a class="level is-mobile" href="#导出exports"><span class="level-left"><span class="level-item">3.2.2</span><span class="level-item">导出exports</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="#–global表示安装到全局，而非当前目录"><span class="level-left"><span class="level-item">4</span><span class="level-item">–global表示安装到全局，而非当前目录</span></span></a></li><li><a class="level is-mobile" href="#–global不可以省略，否则不管用"><span class="level-left"><span class="level-item">5</span><span class="level-item">–global不可以省略，否则不管用</span></span></a></li><li><a class="level is-mobile" href="#走国外的npm-服务器下载jQuery包，速度比较慢"><span class="level-left"><span class="level-item">6</span><span class="level-item">走国外的npm 服务器下载jQuery包，速度比较慢</span></span></a></li><li><a class="level is-mobile" href="#使用cnpm-就会通过淘宝的服务器来下载jQuery"><span class="level-left"><span class="level-item">7</span><span class="level-item">使用cnpm 就会通过淘宝的服务器来下载jQuery</span></span></a></li><li><a class="level is-mobile" href="#查看npm配置信息"><span class="level-left"><span class="level-item">8</span><span class="level-item">查看npm配置信息</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#path路径操作模块"><span class="level-left"><span class="level-item">8.1</span><span class="level-item">path路径操作模块</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Node中的其他成员-dirname-filename"><span class="level-left"><span class="level-item">9</span><span class="level-item">Node中的其他成员(dirname,filename)</span></span></a></li><li><a class="level is-mobile" href="#修改完代码自动重启"><span class="level-left"><span class="level-item">10</span><span class="level-item">修改完代码自动重启</span></span></a></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="https://hexo.io/icon/favicon-160x160.png" alt="好记性不如烂笔头" height="28"></a><p class="is-size-7"><span>&copy; 2021 好记性不如烂笔头</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" async></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
