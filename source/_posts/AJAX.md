@@ -1,7 +1,7 @@
 ---
 title: AJAX
 date: 2021-01-01 22:32:04
-# cover: http://qm9guu9vd.hn-bkt.clouddn.com/Monster%20Musume%20no%20Iru%20Nichijou%2008%20%5BBD%5D%5B1080p%5D%5BFLAC%5D%28unc%29.mkv.00_09_02_03.Still001.bmp
+# cover:
 categories: 
   - 前端
 tags: 
